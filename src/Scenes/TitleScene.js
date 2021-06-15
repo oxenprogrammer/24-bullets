@@ -1,5 +1,5 @@
-import Phaser from 'phaser';
 import Button from '../Objects/Buttons';
+import Phaser from 'phaser';
 import config from '../Config/config';
 
 export default class TitleScene extends Phaser.Scene {
@@ -26,6 +26,13 @@ export default class TitleScene extends Phaser.Scene {
       this.bgMusic.play();
       this.model.bgMusicPlaying = true;
       this.sys.game.globals.bgMusic = this.bgMusic;
+    }
+
+    if (this.model.soundOn === true && this.model.bgSoundPlaying === false) {
+      this.bgSound = this.sound.add('bgSound', { volume: 0.5, loop: true });
+      this.bgSound.play();
+      this.model.bgSoundPlaying = true;
+      this.sys.game.globals.bgSound = this.bgSound;
     }
   }
 }

@@ -4,6 +4,7 @@ export default class Model {
     this._soundOn = true;
     this._musicOn = true;
     this._bgMusicPlaying = false;
+    this._bgSoundPlaying = false;
   }
 
   set musicOn(value) {
@@ -28,5 +29,13 @@ export default class Model {
 
   get bgMusicPlaying() {
     return this._bgMusicPlaying;
+  }
+
+  set bgSoundPlaying(value) {
+    this._bgSoundPlaying = value;
+  }
+
+  get bgSoundPlaying() {
+    return this._bgSoundPlaying;
   }
 }

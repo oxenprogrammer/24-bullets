@@ -1,5 +1,5 @@
-import Phaser from 'phaser';
 import Button from '../Objects/Buttons';
+import Phaser from 'phaser';
 
 export default class OptionsScene extends Phaser.Scene {
   constructor() {
@@ -49,8 +49,14 @@ export default class OptionsScene extends Phaser.Scene {
 
     if (this.model.soundOn === false) {
       this.soundButton.setTexture('box');
+      this.sys.game.globals.bgSound.stop();
+      this.model.bgSoundPlaying = false;
     } else {
       this.soundButton.setTexture('checkedBox');
+      if (this.model.bgSoundPlaying === false) {
+        this.sys.game.globals.bgSound.play();
+        this.model.bgSoundPlaying = true;
+      }
     }
   }
 }
