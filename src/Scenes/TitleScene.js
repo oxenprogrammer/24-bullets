@@ -8,6 +8,9 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
+    // background
+    this.add.image(600, 324, 'hitman2').setScale(0.6);
+
     // Game
     this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
 

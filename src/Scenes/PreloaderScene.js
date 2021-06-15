@@ -1,10 +1,11 @@
 import Phaser from 'phaser';
+import againstEnemy from '../assets/Alone Against Enemy.ogg';
 import blueButton02 from '../assets/ui/blue_button02.png';
 import blueButton03 from '../assets/ui/blue_button03.png';
 import box from '../assets/ui/grey_box.png';
 import checkBox from '../assets/ui/blue_boxCheckmark.png';
 import hitman from '../assets/hitman.png';
-import musicTown from '../assets/TownTheme.mp3';
+import hitman2 from '../assets/hitman2.jpg';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -97,8 +98,9 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('blueButton1', blueButton02);
     this.load.image('blueButton2', blueButton03);
     this.load.image('hitman', hitman);
+    this.load.image('hitman2', hitman2);
     this.load.image('box', box);
     this.load.image('checkedBox', checkBox);
-    this.load.audio('bgMusic', [musicTown]);
+    this.load.audio('bgMusic', [againstEnemy]);
   }
 }
