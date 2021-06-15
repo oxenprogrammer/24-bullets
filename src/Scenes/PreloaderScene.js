@@ -6,9 +6,11 @@ import box from '../assets/ui/grey_box.png';
 import checkBox from '../assets/ui/blue_boxCheckmark.png';
 import deathMusic from '../assets/DeathMatch (Boss Theme).ogg';
 import defeatedMusic from '../assets/Defeated (Game Over Tune).ogg';
+import enemies from '../assets/shooter/enemies_spritesheet.png';
 import hitman from '../assets/hitman.png';
 import hitman2 from '../assets/hitman2.jpg';
 import laserSound from '../assets/Rain of Lasers.ogg';
+import shooter from '../assets/shooter/gunman-sprite.png';
 import victoryMusic from '../assets/Victory Tune.ogg';
 
 export default class PreloaderScene extends Phaser.Scene {
@@ -110,5 +112,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('defeated', [defeatedMusic]);
     this.load.audio('victory', [victoryMusic]);
     this.load.audio('laser', [laserSound]);
+    this.load.spritesheet('shooter', shooter, { frameWidth: 32, frameHeight: 48 });
+    this.load.spritesheet('enemies', enemies, { frameWidth: 32, frameHeight: 48 });
   }
 }

@@ -1,5 +1,5 @@
-import Button from '../Objects/Buttons';
 import Phaser from 'phaser';
+import Button from '../Objects/Buttons';
 import config from '../Config/config';
 
 export default class TitleScene extends Phaser.Scene {

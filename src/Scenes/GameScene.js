@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import hitman from '../assets/hitman.png';
+import soldier from '../assets/shooter/survivor-shoot_shotgun_0.png';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -7,12 +7,25 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    // load images
-    this.load.image('hitman', hitman);
+    // load sprite
+    this.load.spritesheet('soldier', soldier, { frameWidth: 512, frameHeight: 512 });
   }
 
   create() {
-    const image = this.add.image(400, 300, 'hitman');
-    image.setScale(0.3);
+    this.cameras.main.setBackgroundColor(0xffffff);
+    this.player = this.physics.add.sprite(400, 300, 'soldier').setScale(0.3);
+    this.player.setCollideWorldBounds(true);
+    this.player.body.setGravityY(300);
+  }
+
+  update() {
+    this.cursors = this.input.keyboard.createCursorKeys();
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-160);
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(160);
+    } else {
+      this.player.setVelocityX(0);
+    }
   }
 }
