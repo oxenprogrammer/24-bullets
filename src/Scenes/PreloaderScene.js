@@ -4,8 +4,12 @@ import blueButton02 from '../assets/ui/blue_button02.png';
 import blueButton03 from '../assets/ui/blue_button03.png';
 import box from '../assets/ui/grey_box.png';
 import checkBox from '../assets/ui/blue_boxCheckmark.png';
+import deathMusic from '../assets/DeathMatch (Boss Theme).ogg';
+import defeatedMusic from '../assets/Defeated (Game Over Tune).ogg';
 import hitman from '../assets/hitman.png';
 import hitman2 from '../assets/hitman2.jpg';
+import laserSound from '../assets/Rain of Lasers.ogg';
+import victoryMusic from '../assets/Victory Tune.ogg';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
