@@ -6,11 +6,19 @@ import box from '../assets/ui/grey_box.png';
 import checkBox from '../assets/ui/blue_boxCheckmark.png';
 import deathMusic from '../assets/DeathMatch (Boss Theme).ogg';
 import defeatedMusic from '../assets/Defeated (Game Over Tune).ogg';
-import enemies from '../assets/shooter/enemies_spritesheet.png';
+import enemy0 from '../assets/Enemies/sprEnemy0.png';
+import enemy1 from '../assets/Enemies/sprEnemy1.png';
+import enemy2 from '../assets/Enemies/sprEnemy2.png';
+import explosion from '../assets/Enemies/sprExplosion.png';
 import hitman from '../assets/hitman.png';
 import hitman2 from '../assets/hitman2.jpg';
+import laserEnemy from '../assets/Enemies/sprLaserEnemy0.png';
+import laserPlayer from '../assets/Enemies/spaceMissiles_037.png';
 import laserSound from '../assets/Rain of Lasers.ogg';
-import shooter from '../assets/shooter/gunman-sprite.png';
+import sndExplode0 from '../assets/sndExplode0.wav';
+import sndExplode1 from '../assets/sndExplode1.wav';
+import sndLaser from '../assets/sndLaser.wav';
+import soldier from '../assets/shooter/survivor-shoot_shotgun_0.png';
 import victoryMusic from '../assets/Victory Tune.ogg';
 
 export default class PreloaderScene extends Phaser.Scene {
@@ -112,7 +120,25 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('defeated', [defeatedMusic]);
     this.load.audio('victory', [victoryMusic]);
     this.load.audio('laser', [laserSound]);
-    this.load.spritesheet('shooter', shooter, { frameWidth: 32, frameHeight: 48 });
-    this.load.spritesheet('enemies', enemies, { frameWidth: 32, frameHeight: 48 });
+    this.load.audio('sndExplode0', sndExplode0);
+    this.load.audio('sndExplode1', sndExplode1);
+    this.load.audio('sndLaser', sndLaser);
+    this.load.spritesheet('soldier', soldier, { frameWidth: 512, frameHeight: 512 });
+
+    this.load.spritesheet('explosion', explosion, {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('enemy0', enemy0, {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('enemy1', enemy1);
+    this.load.spritesheet('enemy2', enemy2, {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('laserEnemy0', laserEnemy);
+    this.load.image('bullet', laserPlayer);
   }
 }

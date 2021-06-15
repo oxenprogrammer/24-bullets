@@ -1,14 +1,8 @@
 import Phaser from 'phaser';
-import soldier from '../assets/shooter/survivor-shoot_shotgun_0.png';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
-  }
-
-  preload() {
-    // load sprite
-    this.load.spritesheet('soldier', soldier, { frameWidth: 512, frameHeight: 512 });
   }
 
   create() {
