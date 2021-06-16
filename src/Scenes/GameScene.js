@@ -49,7 +49,7 @@ export default class GameScene extends Phaser.Scene {
         this.sound.add('sndExplode0'),
         this.sound.add('sndExplode1'),
       ],
-      laser: this.sound.add('sndLaser'),
+      laser: this.sound.add('enemyShot'),
     };
 
     this.time.addEvent({
@@ -84,13 +84,15 @@ export default class GameScene extends Phaser.Scene {
     });
 
     this.count = 0;
+    this.enemyShot = this.sound.add('enemyShot', { volume: 1, loop: true });
     this.physics.add.overlap(this.player, this.enemyLasers, (player, laser) => {
       if (!player.getData('isDead')
           && !laser.getData('isDead')) {
         this.count += 1;
         laser.destroy();
         if (this.count >= 4) {
-          player.explode(true);
+          this.enemyShot.play();
+          player.destroy();
         }
       }
     });
@@ -129,6 +131,53 @@ export default class GameScene extends Phaser.Scene {
       } else {
         this.player.setData('timerShootTick', this.player.getData('timerShootDelay') - 1);
         this.player.setData('isShooting', false);
+      }
+    }
+
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
+      const enemy = this.enemies.getChildren()[i];
+
+      enemy.update();
+
+      if (enemy.x < -enemy.displayWidth
+        || enemy.x > this.game.config.width + enemy.displayWidth
+        || enemy.y < -enemy.displayHeight * 4
+        || enemy.y > this.game.config.height + enemy.displayHeight) {
+        if (enemy) {
+          if (enemy.onDestroy !== undefined) {
+            enemy.onDestroy();
+          }
+
+          enemy.destroy();
+        }
+      }
+    }
+
+    for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
+      const laser = this.enemyLasers.getChildren()[i];
+      laser.update();
+
+      if (laser.x < -laser.displayWidth
+        || laser.x > this.game.config.width + laser.displayWidth
+        || laser.y < -laser.displayHeight * 4
+        || laser.y > this.game.config.height + laser.displayHeight) {
+        if (laser) {
+          laser.destroy();
+        }
+      }
+    }
+
+    for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
+      const laser = this.playerLasers.getChildren()[i];
+      laser.update();
+
+      if (laser.x < -laser.displayWidth
+        || laser.x > this.game.config.width + laser.displayWidth
+        || laser.y < -laser.displayHeight * 4
+        || laser.y > this.game.config.height + laser.displayHeight) {
+        if (laser) {
+          laser.destroy();
+        }
       }
     }
   }

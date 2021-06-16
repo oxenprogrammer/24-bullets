@@ -9,6 +9,7 @@ import defeatedMusic from '../assets/Defeated (Game Over Tune).ogg';
 import enemy0 from '../assets/Enemies/hitman1_machine.png';
 import enemy1 from '../assets/Enemies/sprEnemy1.png';
 import enemy2 from '../assets/Enemies/sprEnemy2.png';
+import enemyShot from '../assets/Enemies/enemy_shot.wav';
 import explosion from '../assets/Enemies/sprExplosion.png';
 import hitman from '../assets/hitman.png';
 import hitman2 from '../assets/hitman2.jpg';
@@ -121,6 +122,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('victory', [victoryMusic]);
     this.load.audio('laser', [laserSound]);
     this.load.audio('sndExplode0', sndExplode0);
+    this.load.audio('enemyShot', enemyShot);
     this.load.audio('sndExplode1', sndExplode1);
     this.load.audio('sndLaser', sndLaser);
     this.load.spritesheet('soldier', soldier, { frameWidth: 512, frameHeight: 512 });
