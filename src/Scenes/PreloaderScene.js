@@ -6,7 +6,7 @@ import box from '../assets/ui/grey_box.png';
 import checkBox from '../assets/ui/blue_boxCheckmark.png';
 import deathMusic from '../assets/DeathMatch (Boss Theme).ogg';
 import defeatedMusic from '../assets/Defeated (Game Over Tune).ogg';
-import enemy0 from '../assets/Enemies/sprEnemy0.png';
+import enemy0 from '../assets/Enemies/hitman1_machine.png';
 import enemy1 from '../assets/Enemies/sprEnemy1.png';
 import enemy2 from '../assets/Enemies/sprEnemy2.png';
 import explosion from '../assets/Enemies/sprExplosion.png';
@@ -130,8 +130,8 @@ export default class PreloaderScene extends Phaser.Scene {
       frameHeight: 32,
     });
     this.load.spritesheet('enemy0', enemy0, {
-      frameWidth: 16,
-      frameHeight: 16,
+      frameWidth: 64,
+      frameHeight: 64,
     });
     this.load.image('enemy1', enemy1);
     this.load.spritesheet('enemy2', enemy2, {
