@@ -4,6 +4,7 @@ import blueButton02 from '../assets/ui/blue_button02.png';
 import blueButton03 from '../assets/ui/blue_button03.png';
 import box from '../assets/ui/grey_box.png';
 import checkBox from '../assets/ui/blue_boxCheckmark.png';
+import death from '../assets/Enemies/pain.wav';
 import deathMusic from '../assets/DeathMatch (Boss Theme).ogg';
 import defeatedMusic from '../assets/Defeated (Game Over Tune).ogg';
 import enemy0 from '../assets/Enemies/hitman1_machine.png';
@@ -16,6 +17,7 @@ import hitman2 from '../assets/hitman2.jpg';
 import laserEnemy from '../assets/Enemies/enemy_bullet.png';
 import laserPlayer from '../assets/Enemies/spaceMissiles_037.png';
 import laserSound from '../assets/Rain of Lasers.ogg';
+import shellFall from '../assets/Enemies/Shells_falls-Marcel-829263474.wav';
 import sndExplode0 from '../assets/sndExplode0.wav';
 import sndExplode1 from '../assets/sndExplode1.wav';
 import sndLaser from '../assets/sndLaser.wav';
@@ -123,7 +125,9 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('laser', [laserSound]);
     this.load.audio('sndExplode0', sndExplode0);
     this.load.audio('enemyShot', enemyShot);
+    this.load.audio('shellFall', shellFall);
     this.load.audio('sndExplode1', sndExplode1);
+    this.load.audio('death', death);
     this.load.audio('sndLaser', sndLaser);
     this.load.spritesheet('soldier', soldier, { frameWidth: 512, frameHeight: 512 });
 

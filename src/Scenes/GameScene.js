@@ -7,8 +7,16 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
   }
 
+  init() {
+    this.score = 0;
+  }
+
   create() {
     this.cameras.main.setBackgroundColor(0xffffff);
+    this.scoreLabel = this.add.text(100, 24, '0');
+    this.scoreLabel.setColor('red');
+    this.scoreLabel.setFontSize(24);
+
     this.anims.create({
       key: 'enemy0',
       frames: this.anims.generateFrameNumbers('enemy0'),
@@ -46,10 +54,10 @@ export default class GameScene extends Phaser.Scene {
 
     this.sfx = {
       explosions: [
-        this.sound.add('sndExplode0'),
-        this.sound.add('sndExplode1'),
+        this.sound.add('death'),
       ],
       laser: this.sound.add('enemyShot'),
+      shellFall: this.sound.add('shellFall'),
     };
 
     this.time.addEvent({
@@ -80,6 +88,7 @@ export default class GameScene extends Phaser.Scene {
 
         enemy.explode(true);
         playerLaser.destroy();
+        this.incrementScore();
       }
     });
 
@@ -180,5 +189,10 @@ export default class GameScene extends Phaser.Scene {
         }
       }
     }
+  }
+
+  incrementScore() {
+    this.score += 1;
+    this.scoreLabel.text = `Enemies Killed: ${this.score.toString()}`;
   }
 }

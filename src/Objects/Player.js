@@ -5,7 +5,7 @@ import Entity from './Entity';
 export default class Player extends Entity {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, 'Player');
-    this.setData('speed', 160);
+    this.setData('speed', 200);
     this.setData('isShooting', false);
     this.setData('timerShootDelay', 10);
     this.setData('timerShootTick', this.getData('timerShootDelay') - 1);
@@ -42,6 +42,7 @@ export default class Player extends Entity {
         this.scene.playerLasers.add(laser);
 
         this.scene.sfx.laser.play();
+        setTimeout(this.scene.sfx.shellFall.play(), 2000);
         this.setData('timerShootTick', 0);
       }
     }
