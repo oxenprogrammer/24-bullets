@@ -1,6 +1,6 @@
+import Phaser from 'phaser';
 import Bullet from './Bullet';
 import Entity from './Entity';
-import Phaser from 'phaser';
 
 export default class Player extends Entity {
   constructor(scene, x, y, key) {
@@ -52,7 +52,7 @@ export default class Player extends Entity {
     this.scene.time.addEvent({
       delay: 1000,
       callback() {
-        this.scene.scene.start('GameOverScene', score);
+        this.scene.scene.start('GameOverScene', { score });
       },
       callbackScope: this,
       loop: false,

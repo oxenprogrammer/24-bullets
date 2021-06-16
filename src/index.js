@@ -1,12 +1,12 @@
 import './styles/main.scss';
 
+import Phaser from 'phaser';
 import BootScene from './Scenes/BootScene';
 import CreditsScene from './Scenes/CreditsScene';
 import GameOverScene from './Scenes/GameOverScene';
 import GameScene from './Scenes/GameScene';
 import Model from './Model';
 import OptionsScene from './Scenes/OptionsScene';
-import Phaser from 'phaser';
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
 import config from './Config/config';

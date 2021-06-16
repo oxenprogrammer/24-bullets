@@ -1,5 +1,5 @@
-import EnemyHitman from '../Objects/EnemyHitman';
 import Phaser from 'phaser';
+import EnemyHitman from '../Objects/EnemyHitman';
 import Player from '../Objects/Player';
 
 export default class GameScene extends Phaser.Scene {
@@ -13,7 +13,7 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     this.cameras.main.setBackgroundColor(0xffffff);
-    this.scoreLabel = this.add.text(100, 24, '0');
+    this.scoreLabel = this.add.text(100, 24, '');
     this.scoreLabel.setColor('red');
     this.scoreLabel.setFontSize(24);
 
