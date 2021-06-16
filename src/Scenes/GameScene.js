@@ -72,6 +72,17 @@ export default class GameScene extends Phaser.Scene {
       callbackScope: this,
       loop: true,
     });
+
+    this.physics.add.collider(this.playerLasers, this.enemies, (playerLaser, enemy) => {
+      if (enemy) {
+        if (enemy.onDestroy !== undefined) {
+          enemy.onDestroy();
+        }
+
+        enemy.explode(true);
+        playerLaser.destroy();
+      }
+    });
   }
 
   update() {
