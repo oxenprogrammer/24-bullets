@@ -1,6 +1,6 @@
+import Phaser from 'phaser';
 import Bullet from './Bullet';
 import Entity from './Entity';
-import Phaser from 'phaser';
 
 export default class Player extends Entity {
   constructor(scene, x, y, key) {
