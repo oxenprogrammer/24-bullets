@@ -1,5 +1,5 @@
-import Phaser from 'phaser';
 import EnemyHitman from '../Objects/EnemyHitman';
+import Phaser from 'phaser';
 import Player from '../Objects/Player';
 
 export default class GameScene extends Phaser.Scene {
@@ -101,7 +101,9 @@ export default class GameScene extends Phaser.Scene {
         laser.destroy();
         if (this.count >= 4) {
           this.enemyShot.play();
-          player.destroy();
+          player.explode(false);
+          // this.scene.start('GameOverScene');
+          player.onDestroy(this.score);
         }
       }
     });
@@ -111,6 +113,8 @@ export default class GameScene extends Phaser.Scene {
           && !enemy.getData('isDead')) {
         player.explode(false);
         enemy.explode(true);
+        // this.scene.start('GameOverScene');
+        player.onDestroy(this.score);
       }
     });
 
