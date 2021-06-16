@@ -30,11 +30,10 @@ export default class GameScene extends Phaser.Scene {
       repeat: 0,
     });
 
-    // this.player = this.physics.add.sprite(400, 300, 'soldier').setScale(0.3);
-    // this.player.setCollideWorldBounds(true);
-    // this.player.body.setGravityY(300);
     this.enemies = this.add.group();
+    this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
+
     this.keyShoot = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.player = new Player(
       this,

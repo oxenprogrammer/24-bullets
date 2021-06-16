@@ -12,7 +12,7 @@ import enemy2 from '../assets/Enemies/sprEnemy2.png';
 import explosion from '../assets/Enemies/sprExplosion.png';
 import hitman from '../assets/hitman.png';
 import hitman2 from '../assets/hitman2.jpg';
-import laserEnemy from '../assets/Enemies/sprLaserEnemy0.png';
+import laserEnemy from '../assets/Enemies/enemy_bullet.png';
 import laserPlayer from '../assets/Enemies/spaceMissiles_037.png';
 import laserSound from '../assets/Rain of Lasers.ogg';
 import sndExplode0 from '../assets/sndExplode0.wav';
