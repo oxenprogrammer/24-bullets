@@ -10,7 +10,8 @@
     "build": "webpack --config webpack/prod.js ",
     "start": "webpack serve --config webpack/base.js --open",
     "test": "jest",
-    "jest:watch": "jest --watch"
+    "jest:watch": "jest --watch",
+    "deploy": "yarn webpack --mode production && git subtree push --prefix dist  -f origin gh-pages"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
