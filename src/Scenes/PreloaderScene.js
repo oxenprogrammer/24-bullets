@@ -11,6 +11,7 @@ import explosion from '../assets/Enemies/sprExplosion.png';
 import hitman2 from '../assets/hitman2.jpg';
 import laserEnemy from '../assets/Enemies/enemy_bullet.png';
 import laserPlayer from '../assets/Enemies/spaceMissiles_037.png';
+import medicine from '../assets/pill_green.png';
 import shellFall from '../assets/Enemies/Shells_falls-Marcel-829263474.wav';
 import sndExplode0 from '../assets/sndExplode0.wav';
 import sndExplode1 from '../assets/sndExplode1.wav';
@@ -110,6 +111,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('hitman2', hitman2);
     this.load.image('box', box);
     this.load.image('checkedBox', checkBox);
+    this.load.image('medicine', medicine);
     this.load.audio('bgSound', [deathMusic]);
     this.load.audio('sndExplode0', sndExplode0);
     this.load.audio('enemyShot', enemyShot);

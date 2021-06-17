@@ -17,6 +17,14 @@ export default class GameScene extends Phaser.Scene {
     this.scoreLabel.setColor('red');
     this.scoreLabel.setFontSize(24);
 
+    this.lives = this.physics.add.group({
+      key: 'medicine',
+      repeat: 3,
+      setXY: { x: 600, y: 30, stepX: 30 },
+    });
+
+    this.life = this.lives;
+
     this.anims.create({
       key: 'enemy0',
       frames: this.anims.generateFrameNumbers('enemy0'),
@@ -95,6 +103,7 @@ export default class GameScene extends Phaser.Scene {
     this.count = 0;
     this.enemyShot = this.sound.add('enemyShot', { volume: 1, loop: false });
     this.physics.add.overlap(this.player, this.enemyLasers, (player, laser) => {
+      this.life.getChildren().map((child) => child.destroy());
       if (!player.getData('isDead')
           && !laser.getData('isDead')) {
         this.count += 1;
@@ -102,7 +111,6 @@ export default class GameScene extends Phaser.Scene {
         if (this.count >= 4) {
           this.enemyShot.play();
           player.explode(false);
-          // this.scene.start('GameOverScene');
           player.onDestroy(this.score);
         }
       }
@@ -113,7 +121,6 @@ export default class GameScene extends Phaser.Scene {
           && !enemy.getData('isDead')) {
         player.explode(false);
         enemy.explode(true);
-        // this.scene.start('GameOverScene');
         player.onDestroy(this.score);
       }
     });
