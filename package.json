@@ -11,7 +11,7 @@
     "start": "webpack serve --config webpack/base.js --open",
     "test": "jest",
     "jest:watch": "jest --watch",
-    "deploy": "yarn webpack --mode production && git subtree push --prefix dist  -f origin gh-pages"
+    "deploy": "yarn webpack --mode production && git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
