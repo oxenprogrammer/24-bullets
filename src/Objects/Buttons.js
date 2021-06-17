@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import UserFormComponent from '../Form/UserForm.component';
 
 export default class Button extends Phaser.GameObjects.Container {
   constructor(scene, x, y, key1, key2, text, targetScene) {
@@ -6,7 +7,8 @@ export default class Button extends Phaser.GameObjects.Container {
     this.scene = scene;
     this.x = x;
     this.y = y;
-
+    
+    this.form = document.querySelector('.form');
     this.button = this.scene.add.sprite(0, 0, key1).setInteractive();
     this.text = this.scene.add.text(0, 0, text, { fontSize: '32px', fill: '#fff' });
     Phaser.Display.Align.In.Center(this.text, this.button);
@@ -16,6 +18,10 @@ export default class Button extends Phaser.GameObjects.Container {
 
     this.button.on('pointerdown', () => {
       this.scene.scene.start(targetScene);
+      if (this.form !== null || undefined) {
+        this.form.remove();
+      }
+      this.form.remove();
     });
 
     this.button.on('pointerover', () => {

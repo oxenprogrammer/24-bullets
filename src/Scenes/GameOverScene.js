@@ -1,7 +1,7 @@
-import Phaser from 'phaser';
 import { getAllScores, postScore } from '../api/leaderboard.service';
 
 import Button from '../Objects/Buttons';
+import Phaser from 'phaser';
 import UserFormComponent from '../Form/UserForm.component';
 
 export default class GameOverScene extends Phaser.Scene {
@@ -32,11 +32,11 @@ export default class GameOverScene extends Phaser.Scene {
     });
 
     const that = this;
+    this.form = document.querySelector('.form');
     this.saveButton.on('pointerdown', () => {
       const playerName = document.querySelector('[name = "name"]').value;
-      const form = document.querySelector('.form');
-      if (form !== null) {
-        form.remove();
+      if (this.form !== null) {
+        this.form.remove();
       }
       postScore(playerName, that.score);
       getAllScores().then((result) => {
