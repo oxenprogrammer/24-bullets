@@ -2,15 +2,15 @@
  * @jest-environment jsdom
  */
 
-import { getAllscores, postScore } from '../api/leaderboard.service';
+import { getAllScores, postScore } from '../api/leaderboard.service';
+
+import fetchMock from 'jest-fetch-mock';
+
+fetchMock.enableMocks();
 
 describe('LeaderBoard API', () => {
-  global.fetch = jest.fn(() => Promise.resolve({
-    json: () => Promise.resolve('Resolve'),
-  }));
-
   beforeEach(() => {
-    fetch.mockClear();
+    fetch.resetMocks();
   });
 
   describe('Post Score', () => {
@@ -22,6 +22,26 @@ describe('LeaderBoard API', () => {
     it('should not post empty user scores', async () => {
       fetch.mockImplementationOnce(() => Promise.reject(new Error('API is Down')));
       await expect(postScore('', '')).resolves.toEqual('API is Down');
+    });
+  });
+
+  describe('Get All Scores', () => {
+    it('should be defined', async () => {
+      fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 24, user: 'emma' }] }));
+      const response = await getAllScores();
+      expect(response).toBeDefined();
+    });
+
+    it('should return a string type', async () => {
+      fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 24, user: 'emma' }] }));
+      const response = await getAllScores();
+      expect(typeof response[0].user).toEqual('string');
+    });
+
+    it('should return a number type', async () => {
+      fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 24, user: 'emma' }] }));
+      const response = await getAllScores();
+      expect(typeof response[0].score).toEqual('number');
     });
   });
 });
