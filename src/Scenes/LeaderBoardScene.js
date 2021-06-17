@@ -18,7 +18,6 @@ export default class LeaderBoardScene extends Phaser.Scene {
 
     const getScores = async () => {
       const data = await getAllScores();
-      console.log('data', data);
       data.sort((a, b) => b.score - a.score)
         .slice(0, 5)
         .map((game, index) => {
