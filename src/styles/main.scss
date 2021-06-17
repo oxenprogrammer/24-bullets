@@ -46,3 +46,22 @@ body {
   color: rgb(95, 162, 238);
   padding: 2rem;
 }
+
+.form {
+  position: absolute;
+  top: 28rem;
+  left: 74.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  font-size: 1.6rem;
+  text-align: center;
+  height: 4rem;
+  width: 15rem;
+  border-radius: 0.6rem;
+  color: #1ea7e1;
+  font-weight: bold;
+  border-color: #1ea7e1;
+}
