@@ -2,9 +2,8 @@
  * @jest-environment jsdom
  */
 
-import { getAllScores, postScore } from '../api/leaderboard.service';
-
 import fetchMock from 'jest-fetch-mock';
+import { getAllScores, postScore } from '../api/leaderboard.service';
 
 fetchMock.enableMocks();
 
