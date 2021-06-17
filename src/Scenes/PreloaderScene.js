@@ -1,18 +1,13 @@
 import Phaser from 'phaser';
-import againstEnemy from '../assets/Alone Against Enemy.ogg';
 import blueButton02 from '../assets/ui/blue_button02.png';
 import blueButton03 from '../assets/ui/blue_button03.png';
 import box from '../assets/ui/grey_box.png';
 import checkBox from '../assets/ui/blue_boxCheckmark.png';
 import death from '../assets/Enemies/pain.wav';
-import deathMusic from '../assets/DeathMatch (Boss Theme).ogg';
-import defeatedMusic from '../assets/Defeated (Game Over Tune).ogg';
+import deathMusic from '../assets/hitmam.mp3';
 import enemy0 from '../assets/Enemies/hitman1_machine.png';
-import enemy1 from '../assets/Enemies/sprEnemy1.png';
-import enemy2 from '../assets/Enemies/sprEnemy2.png';
 import enemyShot from '../assets/Enemies/enemy_shot.wav';
 import explosion from '../assets/Enemies/sprExplosion.png';
-import hitman from '../assets/hitman.png';
 import hitman2 from '../assets/hitman2.jpg';
 import laserEnemy from '../assets/Enemies/enemy_bullet.png';
 import laserPlayer from '../assets/Enemies/spaceMissiles_037.png';
@@ -22,7 +17,6 @@ import sndExplode0 from '../assets/sndExplode0.wav';
 import sndExplode1 from '../assets/sndExplode1.wav';
 import sndLaser from '../assets/sndLaser.wav';
 import soldier from '../assets/shooter/survivor-shoot_shotgun_0.png';
-import victoryMusic from '../assets/Victory Tune.ogg';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -114,14 +108,10 @@ export default class PreloaderScene extends Phaser.Scene {
     // load assets needed in our game
     this.load.image('blueButton1', blueButton02);
     this.load.image('blueButton2', blueButton03);
-    this.load.image('hitman', hitman);
     this.load.image('hitman2', hitman2);
     this.load.image('box', box);
     this.load.image('checkedBox', checkBox);
-    this.load.audio('bgMusic', [againstEnemy]);
     this.load.audio('bgSound', [deathMusic]);
-    this.load.audio('defeated', [defeatedMusic]);
-    this.load.audio('victory', [victoryMusic]);
     this.load.audio('laser', [laserSound]);
     this.load.audio('sndExplode0', sndExplode0);
     this.load.audio('enemyShot', enemyShot);
@@ -138,11 +128,6 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.spritesheet('enemy0', enemy0, {
       frameWidth: 64,
       frameHeight: 64,
-    });
-    this.load.image('enemy1', enemy1);
-    this.load.spritesheet('enemy2', enemy2, {
-      frameWidth: 16,
-      frameHeight: 16,
     });
     this.load.image('laserEnemy0', laserEnemy);
     this.load.image('bullet', laserPlayer);

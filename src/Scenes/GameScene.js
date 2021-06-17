@@ -93,7 +93,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     this.count = 0;
-    this.enemyShot = this.sound.add('enemyShot', { volume: 1, loop: true });
+    this.enemyShot = this.sound.add('enemyShot', { volume: 1, loop: false });
     this.physics.add.overlap(this.player, this.enemyLasers, (player, laser) => {
       if (!player.getData('isDead')
           && !laser.getData('isDead')) {

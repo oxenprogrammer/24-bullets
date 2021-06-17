@@ -1,7 +1,7 @@
+import Phaser from 'phaser';
 import { getAllScores, postScore } from '../api/leaderboard.service';
 
 import Button from '../Objects/Buttons';
-import Phaser from 'phaser';
 import UserFormComponent from '../Form/UserForm.component';
 
 export default class GameOverScene extends Phaser.Scene {
