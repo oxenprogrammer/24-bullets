@@ -1,5 +1,6 @@
 import './styles/main.scss';
 
+// eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
 import BootScene from './Scenes/BootScene';
 import CreditsScene from './Scenes/CreditsScene';

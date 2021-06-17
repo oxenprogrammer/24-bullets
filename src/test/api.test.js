@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 // eslint-disable-next-line import/no-unresolved
-
 import fetchMock from 'jest-fetch-mock';
 import { getAllScores, postScore } from '../api/leaderboard.service';
 
