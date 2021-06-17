@@ -20,7 +20,6 @@ export default class Button extends Phaser.GameObjects.Container {
       if (this.form !== null || undefined) {
         this.form.remove();
       }
-      this.form.remove();
     });
 
     this.button.on('pointerover', () => {

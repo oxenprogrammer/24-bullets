@@ -1,5 +1,5 @@
-import Phaser from 'phaser';
 import Button from '../Objects/Buttons';
+import Phaser from 'phaser';
 import config from '../Config/config';
 
 export default class TitleScene extends Phaser.Scene {
@@ -17,8 +17,11 @@ export default class TitleScene extends Phaser.Scene {
     // Options
     this.optionsButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Options', 'Options');
 
+    // LeaderBoard
+    this.LeaderBoardButton = new Button(this, config.width / 2, config.height / 2 + 100, 'blueButton1', 'blueButton2', 'Scores', 'LeaderBoardScene');
+
     // Credits
-    this.creditsButton = new Button(this, config.width / 2, config.height / 2 + 100, 'blueButton1', 'blueButton2', 'Credits', 'Credits');
+    this.creditsButton = new Button(this, config.width / 2, config.height / 2 + 180, 'blueButton1', 'blueButton2', 'Credits', 'Credits');
 
     this.model = this.sys.game.globals.model;
 
