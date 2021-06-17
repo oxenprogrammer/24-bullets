@@ -16,24 +16,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
-    const getScores = async () => {
-      const data = await getAllScores();
-      data.sort((a, b) => b.score - a.score)
-        .slice(0, 5)
-        .map((game, index) => {
-          const text = `${game.user} - Score: ${game.score}`;
-          this.add.text(800 / 2, (65 * (index + 1.1)) + 100, text, {
-            fontFamily: 'monospace',
-            fontSize: '28px',
-            color: 'white',
-            align: 'center',
-            lineHeight: '1',
-          }).setOrigin(0.5, 0.5);
-          return text;
-        });
-    };
-
-    getScores();
+    this.getScores();
 
     this.menuButton = this.add.sprite(400, 500, 'blueButton1').setInteractive();
     this.menuText = this.add.text(0, 0, 'Menu', { fontSize: '32px', fill: '#fff' });
@@ -42,4 +25,21 @@ export default class LeaderBoardScene extends Phaser.Scene {
       this.scene.start('Title');
     });
   }
+
+  getScores = async () => {
+    const data = await getAllScores();
+    data.sort((a, b) => b.score - a.score)
+      .slice(0, 5)
+      .map((game, index) => {
+        const text = `${game.user} - Score: ${game.score}`;
+        this.add.text(800 / 2, (65 * (index + 1.1)) + 100, text, {
+          fontFamily: 'monospace',
+          fontSize: '28px',
+          color: 'white',
+          align: 'center',
+          lineHeight: '1',
+        }).setOrigin(0.5, 0.5);
+        return text;
+      });
+  };
 }
