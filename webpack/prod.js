@@ -1,3 +1,4 @@
+// eslint-disable import/no-unresolved
 const { merge } = require('webpack-merge');
 // eslint-disable-next-line no-unused-vars
 const path = require('path');

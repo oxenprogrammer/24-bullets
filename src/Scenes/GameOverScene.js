@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
 import { getAllScores, postScore } from '../api/leaderboard.service';
 
