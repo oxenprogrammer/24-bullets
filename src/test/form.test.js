@@ -19,4 +19,10 @@ describe('User Form Component', () => {
   it('should not create a div', () => {
     expect(userFormCompoent.tagName).not.toBe('DIV');
   });
+
+  it('should not have its own submit button', () => {
+    document.body.appendChild(userFormCompoent);
+    const nameInput = document.querySelector('[type = "submit"]');
+    expect(nameInput).toBe(null);
+  });
 });
