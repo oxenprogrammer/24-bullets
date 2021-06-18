@@ -1,8 +1,10 @@
+import { getAllScores, postScore } from '../api/leaderboard.service';
+
+import fetchMock from 'jest-fetch-mock';
+
 /**
  * @jest-environment jsdom
  */
-import fetchMock from 'jest-fetch-mock';
-import { getAllScores, postScore } from '../api/leaderboard.service';
 
 describe('LeaderBoard API', () => {
   fetchMock.enableMocks();
@@ -39,6 +41,11 @@ describe('LeaderBoard API', () => {
       fetch.mockResponseOnce(JSON.stringify({ result: [{ score: 24, user: 'emma' }] }));
       const response = await getAllScores();
       expect(typeof response[0].score).toEqual('number');
+    });
+
+    it('should return invalid json response', async () => {
+      const response = await getAllScores();
+      expect(response).toEqual('invalid json response body at  reason: Unexpected end of JSON input');
     });
   });
 });
