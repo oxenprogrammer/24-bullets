@@ -15,4 +15,8 @@ describe('User Form Component', () => {
     const nameInput = document.querySelector('[name = "name"]');
     expect(nameInput.tagName).toBe('INPUT');
   });
+
+  it('should not create a div', () => {
+    expect(userFormCompoent.tagName).not.toBe('DIV');
+  });
 });
