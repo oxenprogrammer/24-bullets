@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
 import blueButton02 from '../assets/ui/blue_button02.png';
 import blueButton03 from '../assets/ui/blue_button03.png';

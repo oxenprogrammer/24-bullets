@@ -1,8 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
 const { merge } = require('webpack-merge');
-// eslint-disable-next-line no-unused-vars
-const path = require('path');
-// eslint-disable-next-line import/no-unresolved
 const TerserPlugin = require('terser-webpack-plugin');
 const base = require('./base');
 

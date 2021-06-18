@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
 import EnemyHitman from '../Objects/EnemyHitman';
 import Player from '../Objects/Player';

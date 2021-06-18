@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
 import Button from '../Objects/Buttons';
 import config from '../Config/config';
@@ -9,19 +8,14 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    // background
     this.add.image(600, 324, 'hitman2').setScale(0.6);
 
-    // Game
     this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
 
-    // Options
     this.optionsButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Options', 'Options');
 
-    // LeaderBoard
     this.LeaderBoardButton = new Button(this, config.width / 2, config.height / 2 + 100, 'blueButton1', 'blueButton2', 'Scores', 'LeaderBoardScene');
 
-    // Credits
     this.creditsButton = new Button(this, config.width / 2, config.height / 2 + 180, 'blueButton1', 'blueButton2', 'Credits', 'Credits');
 
     this.model = this.sys.game.globals.model;
