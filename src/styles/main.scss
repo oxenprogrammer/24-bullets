@@ -1,1 +1,67 @@
-/** Style goes here */
+// global resets
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  background: url('./../assets/gun.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-top: 8rem;
+  width: 40%;
+  height: auto;
+  margin-left: 50rem;
+}
+
+.heading {
+  font-size: 4.8rem;
+  text-align: center;
+  color: rgb(95, 162, 238);
+  padding: 2rem;
+}
+
+.form {
+  position: absolute;
+  top: 28rem;
+  left: 74.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  font-size: 1.6rem;
+  text-align: center;
+  height: 4rem;
+  width: 15rem;
+  border-radius: 0.6rem;
+  color: #1ea7e1;
+  font-weight: bold;
+  border-color: #1ea7e1;
+}

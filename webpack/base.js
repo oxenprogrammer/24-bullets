@@ -13,14 +13,28 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: [
+              ['@babel/plugin-transform-runtime'],
+            ],
+          },
         },
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader',
       },
       {
-        test: /\.(gif|png|jpe?g|svg|xml|mp3|aac|ogg)$/i,
+        test: /\.(gif|png|jpe?g|svg|xml|mp3|aac|ogg|wav)$/i,
         use: 'file-loader',
       },
     ],
