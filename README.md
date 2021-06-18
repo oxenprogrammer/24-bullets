@@ -6,13 +6,13 @@
 ![screenshot](./LoadingScreen.png)
 
 ## Title Screen
-![Screenshot](./TitleScreen)
+![Screenshot](./TitleScreen.png)
 
 ## Game Play Screen
 ![Screenshot](./GamePlayScreen.png)
 
 ## Game Over Screen
-![Screenshot](./scoreScreen.png)
+![Screenshot](./ScoreScreen.png)
 
 ## Built With
 
