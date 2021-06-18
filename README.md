@@ -2,6 +2,8 @@
 
 > A shooter game built with Phaser 3 inspired by the 3D Game Hitman 2 the Silent Assasain. 
 
+## Game Action
+![Screenshot](./24bullets.gif)
 ## Initialization Screen
 ![screenshot](./LoadingScreen.png)
 
