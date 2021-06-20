@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -49,6 +50,51 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './index.html',
+    }),
+    new HtmlWebpackTagsPlugin({
+      metas: [{
+        path: '../TitleScreen.png',
+        attributes: {
+          property: 'og:image',
+          prefix: 'og: http://ogp.me/ns#',
+        },
+      }, {
+        attributes: {
+          property: 'og:image:type',
+          content: 'image/png',
+        },
+      }, {
+        attributes: {
+          property: 'og:image:width',
+          content: '500',
+        },
+      }, {
+        attributes: {
+          property: 'og:image:height',
+          content: '500',
+        },
+      },
+      {
+        attributes: {
+          property: 'og:url',
+          content: 'http://emanuel-okello.me/24-bullets',
+          prefix: 'og: http://ogp.me/ns#',
+        },
+      },
+      {
+        attributes: {
+          property: 'og:type',
+          content: 'content="text/html; charset=utf-8',
+          prefix: 'og: http://ogp.me/ns#',
+        },
+      },
+      {
+        attributes: {
+          property: 'og:title',
+          content: '24 Bullets',
+          prefix: 'og: http://ogp.me/ns#',
+        },
+      }],
     }),
   ],
 };
