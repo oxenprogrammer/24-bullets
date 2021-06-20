@@ -1,4 +1,6 @@
 const { merge } = require('webpack-merge');
+// eslint-disable-next-line no-unused-vars
+const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const base = require('./base');
 
